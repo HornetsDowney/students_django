@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+</head>
+
+<body>
+<div class="one_max">
+    <div class="title">
+        <a href="index.html"><img src="https://wx2.sbimg.cn/2020/09/11/9YIBd.jpg" alt="首页"/></a>
+    </div>
+
+
+    <div class="body">
+        <div class="from">
+            <form action="" method="post">
+                用户名:<input name="student_user" type="text" id="student_user" placeholder="登陆账号"><br>
+                密 码:<input name="student_password" type="password" id="pwd" placeholder="密码(不少于6位)"><br>
+                确认密码:<input name="verify" type="password" id="pwd1" placeholder="再次输入密码" onkeyup="validate()"><br>
+                <span id="yincang"></span><br>
+                真实姓名<input name="student_name" type="text" id="yourname" placeholder="请输入真实姓名">
+                <input type="submit" value="注册">
+
+            </form>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    function validate(){
+        var pwd = document.getElementById("pwd").value;
+        var pwd1 = document.getElementById("pwd1").value;
+
+        if (pwd != pwd1){
+            document.getElementById("yincang").innerHTML="<font color='red'>两次密码不同</font>";
+            document.getElementById("submit").disabled=true;
+        }else{
+            document.getElementById("yincang").innerHTML="";
+            document.getElementById("submit").disabled=false;
+        }
+    }
+
+
+
+</script>
+
+</body>
+
+</html>

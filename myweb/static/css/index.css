@@ -1,0 +1,36 @@
+.divone {
+    height: 15%;
+}
+
+.divtwo {
+    /* 左浮动 */
+    float: left;
+    width: 20%;
+    height: 70%;
+}
+
+.divthree {
+    /* 左浮动 */
+    float: left;
+    width: 80%;
+    height: 70%;
+}
+
+.divfour {
+    height: 10%;
+    /* 禁止浮动 */
+    clear: both;
+}
+
+/* 设置A标签默认、鼠标放在a标签，鼠标点击a标签 */
+
+a, a:hover, a:active {
+    /* 取消a标签下划线 */
+    text-decoration: none;
+    color: black;
+    /* 设置a标签不换行 */
+    white-space: nowrap;
+}
+#a-login{
+    margin-left: 85%;
+}

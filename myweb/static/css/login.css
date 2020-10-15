@@ -1,0 +1,20 @@
+img {
+    widows: 120px;
+    height: 120px;
+}
+
+body {
+    background-image: url(../image/夜景.jpg);
+    font-size: 15px;
+    color: cyan;
+}
+
+.from {
+    margin: 0 auto;
+    width: 300px;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
