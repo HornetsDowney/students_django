@@ -26,6 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -74,7 +75,7 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test1',  # 数据库名称
+        'NAME': 'student',  # 数据库名称
         'USER': 'root',  # 数据库用户名
         'PASSWORD': '123456',  # 数据库密码
         'HOST': '127.0.0.1',  # 数据库地址
