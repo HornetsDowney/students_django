@@ -1,0 +1,12 @@
+学生信息表：
+	id：int(20)  主键 primary key
+	学号： int(20)  not null unique,
+	班级： varchar(10) not null,
+	姓名： varchar(10) not null,
+	性别： varchar(2) not null,
+	老师id： int(10)  外键 foreign key
+
+老师表：
+	id：int(10) not null unique,
+	老师id： int(19) not null unique,
+	老师姓名: varchar(10) not null,

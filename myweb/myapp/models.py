@@ -10,4 +10,12 @@ class students(models.Model):
     student_name = models.CharField(max_length=20, null=False)
 
     def __str__(self):
-        return self.student_name
+        return self.student_user
+
+
+class student_info(models.Model):
+    class_root = models.CharField(max_length=10, null=False)
+    student_name = models.CharField(max_length=10, null=False)
+    student_sex = models.CharField(max_length=2, null=False)
+    student_id = models.IntegerField()
+
