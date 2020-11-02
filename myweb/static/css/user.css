@@ -1,0 +1,35 @@
+table {
+    border: 1px;
+    width: 70%;
+}
+
+tr {
+    border: 1px;
+}
+
+td {
+    border: 1px;
+    height: max-content;
+}
+
+a {
+    white-space: nowrap;
+}
+
+#serch {
+    margin-left: 300px;
+}
+
+.only {
+    width: 100%;
+    height: 100%;
+}
+
+.head {
+    margin-left: 30%;
+}
+
+.main {
+    margin-left: 30%;
+    margin-top: 5%;
+}
