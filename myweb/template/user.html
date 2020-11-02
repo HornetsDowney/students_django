@@ -1,45 +1,61 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <title>用户页面</title>
     <link rel="stylesheet" type="text/css" href="/static/css/user.css">
 </head>
 
 <body>
-<div class="only">
-    <div class="head">
+    <div class="only">
+        <div class="head">
 
-        <a alt="首页"><img src="https://wx2.sbimg.cn/2020/09/11/9YIBd.jpg"></a>
-        <font>welcome {{ username }}</font>
-        <input name="serch" type="text" id="serch">
-        <button>提交</button>
+            <a alt="首页"><img src="https://wx2.sbimg.cn/2020/09/11/9YIBd.jpg"></a>
+            <font>welcome {{ username }}</font>
+            <input name="serch" type="text" id="serch">
+            <button>提交</button>
+
+        </div>
+
+        <div class="main">
+            <table>
+                <tr>
+                    <td>学生id</td>
+                    <td>班级</td>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>老师ID</td>
+                    <td></td>
+                </tr>
+                {% for s in stu %}
+                <tr>
+                    <td>{{ s.id }}</td>
+                    <td>{{ s.class_root }}</td>
+                    <td>{{ s.student_name }}</td>
+                    <td>{{ s.student_sex }}</td>
+                    <td>{{ s.student_id }}</td>
+                    <td>
+                        <button>修改</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <button type="button" onclick="">新增学生</button>
+        </div>
 
     </div>
-
-    <div class="main">
-        <table>
-            <tr>
-                <td>学生id</td>
-                <td>班级</td>
-                <td>姓名</td>
-                <td>性别</td>
-                <td>老师ID</td>
-            </tr>
-            {% for s in stu %}
-            <tr>
-                <td>{{ s.id }}</td>
-                <td>{{ s.class_root }}</td>
-                <td>{{ s.student_name }}</td>
-                <td>{{ s.student_sex }}</td>
-                <td>{{ s.student_id }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-
-
-</div>
-
+    <script>
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("POST","../add_student.html", true);
+        xmlhttp.send();
+    </script>
 
 </body>
 

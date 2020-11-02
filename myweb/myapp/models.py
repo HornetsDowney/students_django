@@ -13,9 +13,9 @@ class students(models.Model):
         return self.student_user
 
 
+# 学生信息表
 class student_info(models.Model):
-    class_root = models.CharField(max_length=10, null=False)
-    student_name = models.CharField(max_length=10, null=False)
-    student_sex = models.CharField(max_length=2, null=False)
-    student_id = models.IntegerField()
-
+    class_root = models.CharField(max_length=10, null=False)  # 班级
+    student_name = models.CharField(max_length=10, null=False)  # 学生姓名
+    student_sex = models.CharField(max_length=2, null=False)  # 学生性别
+    student_id = models.IntegerField()  # 老师ID
