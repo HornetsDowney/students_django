@@ -22,6 +22,11 @@ def addr(request):
     return render(request, 'addr.html')
 
 
+# 用户跳转到添加学生信息页面
+def add_student(request):
+    return render(request, 'add_student.html')
+
+
 # 登录模块
 def login_action(request):
     context = {}
@@ -60,3 +65,17 @@ def insert(request):
             user_data.save()
             return render(request, 'login.html')
     return render(request, 'addr.html')
+
+
+# 添加学生
+def insert_student(request):
+    if request.method == "POST":
+        addr_root = request.POST.get("class_room")
+        addr_name = request.POST.get("student_name")
+        addr_sex = request.POST.get("student_sex")
+        addr_id = request.POST.get("class_id")
+
+        student = student_info(class_root=addr_root, student_name=addr_name, student_sex=addr_sex, student_id=addr_id)
+        student.save()
+        stu = student_info.objects.all()
+    return render(request, 'user.html', {'stu': stu})
