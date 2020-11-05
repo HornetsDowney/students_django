@@ -7,15 +7,20 @@
 </head>
 
 <body>
-    <div>
-        <form action="/insert_student/" method="POST">
-            班级姓名：<input type="text" name="class_room" placeholder="班级名称"><br> 学生姓名：
-            <input type="text" name="student_name" placeholder="学生姓名"><br> 学生性别：
-            <input type="text" name="student_sex" placeholder="输入男/女"><br> 老师ID：
-            <input type="text" name="class_id" placeholder="老师ID"><br>
-            <input type="submit" value="添加">
-        </form>
-    </div>
+<div>
+    <form action="/insert_student/" method="POST">
+        班级姓名：<input type="text" name="class_room" placeholder="班级名称"
+                    onkeyup="this.value=this.value.replace(/[, ]/g,'')"><br>
+
+        学生姓名：<input type="text" name="student_name" placeholder="学生姓名"
+                    onkeyup="this.value=this.value.replace(/[, ]/g,'')"><br>
+        学生性别：<input type="text" name="student_sex" placeholder="输入男/女"
+                    onkeyup="this.value=this.value.replace(/[, ]/g,'')"><br>
+        老师ID：<input type="text" name="class_id" placeholder="老师ID"
+                    onkeyup="this.value=this.value.replace(/[, ]/g,'')"><br>
+        <input type="submit" value="添加">
+    </form>
+</div>
 </body>
 
 </html>
