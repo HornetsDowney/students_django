@@ -4,6 +4,9 @@ from django.shortcuts import render
 from myapp import models
 from myapp.models import students
 from myapp.models import student_info
+# from myweb.myapp import models
+# from myweb.myapp.models import students
+# from myweb.myapp.models import student_info
 
 
 # Create your views here.

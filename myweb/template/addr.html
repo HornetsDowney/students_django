@@ -22,7 +22,8 @@
                 密 码:<input name="student_password" type="password" id="pwd" placeholder="密码(不少于6位)"><br>
                 确认密码:<input name="verify" type="password" id="pwd1" placeholder="再次输入密码" onkeyup="validate()"><br>
                 <span id="yincang"></span><br>
-                真实姓名<input name="student_name" type="text" id="yourname" placeholder="请输入真实姓名">
+                真实姓名<input name="student_name" type="text" id="yourname" placeholder="请输入真实姓名" onkeyup="isnone()">
+                <span id="name"></span>
                 <input type="submit" value="注册">
 
             </form>
@@ -44,7 +45,17 @@
         }
     }
 
+    function isnone(){
+        var username = getElementById("yourname").value;
 
+        if (username == null){
+            document.getElementById('name').innerHTML="<font color='red'>真实姓名不能为空</font>";
+            document.getElementById("submit").disabled=true;
+        }else{
+            document.getElementById("name").innerHTML="";
+            document.getElementById("submit").disabled=false;
+        }
+    }
 
 </script>
 

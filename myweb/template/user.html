@@ -29,13 +29,13 @@
             </tr>
             {% for s in stu %}
             <tr>
-                <td>{{ s.id }}</td>
-                <td>{{ s.class_root }}</td>
-                <td>{{ s.student_name }}</td>
-                <td>{{ s.student_sex }}</td>
-                <td>{{ s.student_id }}</td>
+                <td id="id">{{ s.id }}</td>
+                <td id="class_root">{{ s.class_root }}</td>
+                <td id="student_name">{{ s.student_name }}</td>
+                <td id="student_sex">{{ s.student_sex }}</td>
+                <td id="student_id">{{ s.student_id }}</td>
                 <td>
-                    <button>修改</button>
+                    <button onclick="update_student()">修改</button>
                     <button>删除</button>
                 </td>
             </tr>
@@ -47,7 +47,12 @@
 </div>
 <script>
     function add_student() {
-        window.open("add_student.html")
+        window.open("add_student.html");
+    }
+
+    function update_student() {
+        var x = document.getElementById("id").innerHTML;
+        alert(x);
     }
 
 </script>
