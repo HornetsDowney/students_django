@@ -4,9 +4,6 @@ from django.shortcuts import render
 from myapp import models
 from myapp.models import students
 from myapp.models import student_info
-# from myweb.myapp import models
-# from myweb.myapp.models import students
-# from myweb.myapp.models import student_info
 
 
 # Create your views here.
@@ -33,6 +30,7 @@ def add_student(request):
 # 登录模块
 def login_action(request):
     context = {}
+    login_success = False
     if request.method == "POST":
         user = request.POST.get('username', None)  # 避免提交为空时异常
         user = user.strip()  # 去除空格
@@ -44,14 +42,20 @@ def login_action(request):
             context['usererror'] = '用户名不存在'
             return render(request, 'login.html', context)
     else:
+        login_success = False
         print('登陆失败')
         context['password'] = '密码错误，请重新输入'
         return render(request, 'login.html', context)
     studentpwd = str(stuser.student_password)
     if pwd == studentpwd:
+        login_success = True
         print('登录成功')
         stu = student_info.objects.all()
-        return render(request, 'user.html', {'stu': stu})
+        if login_success:
+            rse = render(request, 'user.html', {'stu': stu})
+            rse.set_cookie('username', user, 3600)
+            return rse
+        # return render(request, 'user.html', {'stu': stu})
 
 
 # 注册模块
@@ -71,6 +75,7 @@ def insert(request):
 
 
 # 添加学生
+@login_required
 def insert_student(request):
     if request.method == "POST":
         addr_root = request.POST.get("class_room")
