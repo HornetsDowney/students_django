@@ -7,55 +7,52 @@
 </head>
 
 <body>
-<div class="only">
-    <div class="head">
+    <div class="only">
+        <div class="head">
 
-        <a alt="首页" href="index.html"><img src="/static/image/result.png"></a>
-        <font>welcome {{ username }}</font>
-        <input name="serch" type="text" id="serch">
-        <button>提交</button>
+            <!--        <a alt="首页" href="index.html"><img src="/static/image/result.png"></a>-->
+            <font>welcome {{ username }}</font>
+            <input name="serch" type="text" id="serch">
+            <button>提交</button>
+        </div>
+        <div class="main">
+            <table>
+                <tr>
+                    <td>学生id</td>
+                    <td>班级</td>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>老师ID</td>
+                    <td></td>
+                </tr>
+                {% for s in stu %}
+                <tr>
+                    <td id="id{{ s.id }}">{{ s.id }}</td>
+                    <td id="class_root">{{ s.class_root }}</td>
+                    <td id="student_name">{{ s.student_name }}</td>
+                    <td id="student_sex">{{ s.student_sex }}</td>
+                    <td id="student_id">{{ s.student_id }}</td>
+                    <td>
+                        <button onclick="update_student()">修改</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <button type="submit" onclick="add_student()">新增学生</button>
+        </div>
 
     </div>
+    <script>
+        function add_student() {
+            window.open("add_student.html");
+        }
 
-    <div class="main">
-        <table>
-            <tr>
-                <td>学生id</td>
-                <td>班级</td>
-                <td>姓名</td>
-                <td>性别</td>
-                <td>老师ID</td>
-                <td></td>
-            </tr>
-            {% for s in stu %}
-            <tr>
-                <td id="id{{ s.id }}">{{ s.id }}</td>
-                <td id="class_root">{{ s.class_root }}</td>
-                <td id="student_name">{{ s.student_name }}</td>
-                <td id="student_sex">{{ s.student_sex }}</td>
-                <td id="student_id">{{ s.student_id }}</td>
-                <td>
-                    <button onclick="update_student()">修改</button>
-                    <button>删除</button>
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
-        <button type="submit" onclick="add_student()">新增学生</button>
-    </div>
-
-</div>
-<script>
-    function add_student() {
-        window.open("add_student.html");
-    }
-
-    function update_student() {
-        var x = document.getElementById("id").innerHTML;
-        alert(x);
-    }
-
-</script>
+        function update_student() {
+            var x = document.getElementById("id").innerHTML;
+            alert(x);
+        }
+    </script>
 </body>
 
 </html>

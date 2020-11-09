@@ -22,11 +22,6 @@ def addr(request):
     return render(request, 'addr.html')
 
 
-# 用户跳转到添加学生信息页面
-def add_student(request):
-    return render(request, 'add_student.html')
-
-
 # 登录模块
 def login_action(request):
     context = {}
@@ -87,3 +82,9 @@ def insert_student(request):
         student.save()
         stu = student_info.objects.all()
     return render(request, 'user.html', {'stu': stu})
+
+
+# 用户跳转到添加学生信息页面
+@login_required
+def add_student(request):
+    return render(request, 'add_student.html')

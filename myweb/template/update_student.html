@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>修改学生信息</title>
 </head>
+
 <body>
-
-    <div>
-        <table>
-            <tr>
-                <td>学生ID</td>
-                <td>班级</td>
-                <td>姓名</td>
-                <td>性别</td>
-                <td>老师ID</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-
-
+    <div class="one">
+        <div class="default">
+            <p>这是学生原信息</p>
+            <table>
+                <tr>
+                    <td>学生id</td>
+                    <td>班级</td>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>老师ID</td>
+                </tr>
+                <tr>
+                    <td>test1</td>
+                    <td>test1</td>
+                    <td>test1</td>
+                    <td>test1</td>
+                    <td>test1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="preview">
+            <p>这是预览信息</p>
+            <table>
+                <tr>
+                    <td>学生id</td>
+                    <td>班级</td>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>老师ID</td>
+                </tr>
+                <tr>
+                    <td>test1</td>
+                    <td id="a_class">test1</td>
+                    <td id="a_name">test1</td>
+                    <td id="a_sex">test1</td>
+                    <td id="a_classid">test1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="update">
+            <form action="" method="">
+                <span>班级</span><input type="text" name="class" id="class" onblur="updateClass()" placeholder="班级名称"><br>
+                <span>姓名</span><input type="text" name="student_name" id="name" placeholder="学生姓名"><br>
+                <span>性别</span><input type="text" name="sex" id="sex" placeholder="学生性别"><br>
+                <span>老师ID</span><input type="text" name="class_id" id="classId" placeholder="老师的ID"><br>
+                <input type="submit" value="更新">
+                <input type="reset" value="重置">
+            </form>
+        </div>
     </div>
 
+    <script>
+        function updateClass(event) {
+            var ad = document.getElementById("class").value;
+            document.getElementById("a_class").innerHTML = ad;
+        }
+    </script>
+
 </body>
+
 </html>
