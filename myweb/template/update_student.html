@@ -38,7 +38,7 @@
                     <td>老师ID</td>
                 </tr>
                 <tr>
-                    <td>test1</td>
+                    <td>1</td>
                     <td id="a_class">test1</td>
                     <td id="a_name">test1</td>
                     <td id="a_sex">test1</td>
@@ -49,9 +49,9 @@
         <div class="update">
             <form action="" method="">
                 <span>班级</span><input type="text" name="class" id="class" onblur="updateClass()" placeholder="班级名称"><br>
-                <span>姓名</span><input type="text" name="student_name" id="name" placeholder="学生姓名"><br>
-                <span>性别</span><input type="text" name="sex" id="sex" placeholder="学生性别"><br>
-                <span>老师ID</span><input type="text" name="class_id" id="classId" placeholder="老师的ID"><br>
+                <span>姓名</span><input type="text" name="student_name" id="name" onblur="updateName()" placeholder="学生姓名"><br>
+                <span>性别</span><input type="text" name="sex" id="sex" onblur="updateSex()" placeholder="学生性别"><br>
+                <span>老师ID</span><input type="text" name="class_id" id="classId" onblur="updateClassId()" placeholder="老师的ID"><br>
                 <input type="submit" value="更新">
                 <input type="reset" value="重置">
             </form>
@@ -61,7 +61,38 @@
     <script>
         function updateClass(event) {
             var ad = document.getElementById("class").value;
-            document.getElementById("a_class").innerHTML = ad;
+            if (ad == "") {
+                alert('班级名称不能为空');
+            } else {
+                document.getElementById("a_class").innerHTML = ad;
+            }
+        }
+
+        function updateName(event) {
+            var ad = document.getElementById("name").value;
+            if (ad == "") {
+                alert("学生姓名不能为空");
+            } else {
+                document.getElementById("a_name").innerHTML = ad;
+            }
+        }
+
+        function updateSex(event) {
+            var ad = document.getElementById("sex").value;
+            if (ad == "") {
+                alert('学生性别不能为空');
+            } else {
+                document.getElementById("a_sex").innerHTML = ad;
+            }
+        }
+
+        function updateClassId(event) {
+            var ad = document.getElementById("classId").value;
+            if (ad == "") {
+                alert('老师ID不能为空');
+            } else {
+                document.getElementById("a_classid").innerHTML = ad;
+            }
         }
     </script>
 
